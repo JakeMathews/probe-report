@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:probe_report/exporters/csv_exporter.dart';
-import 'package:probe_report/probe_parser.dart';
+import 'package:probe_report/probe_report_parser.dart';
 
 main(final List<String> arguments) {
   if (arguments.length != 1) {
@@ -22,7 +22,7 @@ main(final List<String> arguments) {
 }
 
 parse(final String probeResults, final Directory destinationDirectory) {
-  var probeReport = ProbeParser().parse(probeResults);
+  var probeReport = ProbeReportParser().parse(probeResults);
 
   CSVExporter().export(probeReport, destinationDirectory);
 }

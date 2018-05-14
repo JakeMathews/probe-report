@@ -1,0 +1,88 @@
+Trying 10.0.11.71...
+Connected to 10.0.11.71.
+Escape character is '^]'.
+
+-------------------------------------------------------------------
+   COMPONENT NO 1                   FEATURE NO 1
+-------------------------------------------------------------------
+WORK OFFSET S154
+SIZE D3.2500   ACTUAL 3.2515   DEV .0015
+POSN X.0000   ACTUAL -.0004   DEV -.0004
+POSN Y.0000   ACTUAL .0015   DEV .0015
+CURRENT SECTION [1] Outside Diamter
+
+-------------------------------------------------------------------
+   COMPONENT NO 1                   FEATURE NO 2
+-------------------------------------------------------------------
+WORK OFFSET S154
+POSN Z.0000   ACTUAL .0014   DEV .0014
+CURRENT SECTION [5] Height
+
+-------------------------------------------------------------------
+   COMPONENT NO 1                   FEATURE NO 3
+-------------------------------------------------------------------
+WORK OFFSET S154
+SIZE D.1503   ACTUAL .1506   DEV .0003
+POSN X.7500   ACTUAL .7624   DEV .0124
+POSN Y-.7500   ACTUAL -.7519   DEV -.0019
+CURRENT SECTION [10] Thread Location
+
+-------------------------------------------------------------------
+   COMPONENT NO 1                   FEATURE NO 4
+-------------------------------------------------------------------
+WORK OFFSET S154
+SIZE D.1503   ACTUAL .1511   DEV .0008
+POSN X-.7500   ACTUAL -.7373   DEV .0127
+POSN Y.7500   ACTUAL .7480   DEV -.0020
+CURRENT SECTION [11] Thread Location
+
+-------------------------------------------------------------------
+   COMPONENT NO 1                   FEATURE NO 5
+-------------------------------------------------------------------
+WORK OFFSET S154
+SIZE D1.1500   ACTUAL 1.1512   DEV .0012
+POSN X.0000   ACTUAL .0127   DEV .0127
+POSN Y.0000   ACTUAL -.0018   DEV -.0018
+CURRENT SECTION [13] Large Bore
+
+-------------------------------------------------------------------
+   COMPONENT NO 1                   FEATURE NO 6
+-------------------------------------------------------------------
+WORK OFFSET S154
+POSN Z-.3500   ACTUAL -.3498   DEV .0002
+CURRENT SECTION [14] Large Bore Depth
+
+-------------------------------------------------------------------
+   COMPONENT NO 1                   FEATURE NO 7
+-------------------------------------------------------------------
+WORK OFFSET S154
+SIZE D.5030   ACTUAL .5036   DEV .0006
+POSN X.0000   ACTUAL .0125   DEV .0125
+POSN Y.0000   ACTUAL -.0025   DEV -.0025
+CURRENT SECTION Inner Shaft
+
+-------------------------------------------------------------------
+   COMPONENT NO 1                   FEATURE NO 8
+-------------------------------------------------------------------
+WORK OFFSET S154
+SIZE D.1875   ACTUAL .1885   DEV .0010
+POSN X-.3750   ACTUAL -.3625   DEV .0125
+POSN Y.1930   ACTUAL .1914   DEV -.0016
+CURRENT SECTION [19] Pin Bore
+CURRENT SECTION [1] Outside Diamter
+CURRENT SECTION [5] Height
+CURRENT SECTION [10] Thread Location
+CURRENT SECTION [11] Thread Location
+CURRENT SECTION [13] Large Bore
+CURRENT SECTION [14] Large Bore Depth
+CURRENT SECTION Inner Shaft
+CURRENT SECTION [19] Pin Bore
+
+-------------------------------------------------------------------
+   COMPONENT NO 1                   FEATURE NO 1
+-------------------------------------------------------------------
+WORK OFFSET S154
+SIZE D.7500   ACTUAL .7509   DEV .0009
+POSN X.0000   ACTUAL .0022   DEV .0022
+POSN Y.0000   ACTUAL -.0014   DEV -.0014
+CURRENT SECTION [3] Outer Shaft

@@ -9,7 +9,7 @@ WORK OFFSET S154
 SIZE D3.2500   ACTUAL 3.2496   DEV -.0004
 POSN X.0000   ACTUAL -.0001   DEV -.0001
 POSN Y.0000   ACTUAL .0012   DEV .0012
-CURRENT SECTION (154.44) [1] Outside Diameter
+CURRENT SECTION (154.44) [1] Outside Diamter
 
 -------------------------------------------------------------------
    COMPONENT NO 4                   FEATURE NO 2
@@ -77,7 +77,7 @@ WORK OFFSET S154
 SIZE D3.2500   ACTUAL 3.2516   DEV .0016
 POSN X.0000   ACTUAL -.0007   DEV -.0007
 POSN Y.0000   ACTUAL .0009   DEV .0009
-CURRENT SECTION (154.46) [1] Outside Diameter
+CURRENT SECTION (154.46) [1] Outside Diamter
 
 -------------------------------------------------------------------
    COMPONENT NO 4                   FEATURE NO 10
@@ -145,7 +145,7 @@ WORK OFFSET S154
 SIZE D3.2500   ACTUAL 3.2502   DEV .0002
 POSN X.0000   ACTUAL .0002   DEV .0002
 POSN Y.0000   ACTUAL .0017   DEV .0017
-CURRENT SECTION (154.48) [1] Outside Diameter
+CURRENT SECTION (154.48) [1] Outside Diamter
 
 -------------------------------------------------------------------
    COMPONENT NO 4                   FEATURE NO 18
@@ -391,7 +391,7 @@ WORK OFFSET S154
 SIZE D3.2500   ACTUAL 3.2509   DEV .0009
 POSN X.0000   ACTUAL -.0001   DEV -.0001
 POSN Y.0000   ACTUAL .0018   DEV .0018
-CURRENT SECTION (154.44) [1] Outside Diameter
+CURRENT SECTION (154.44) [1] Outside Diamter
 
 -------------------------------------------------------------------
    COMPONENT NO 5                   FEATURE NO 2
@@ -459,7 +459,7 @@ WORK OFFSET S154
 SIZE D3.2500   ACTUAL 3.2538   DEV .0038
 POSN X.0000   ACTUAL -.0015   DEV -.0015
 POSN Y.0000   ACTUAL .0009   DEV .0009
-CURRENT SECTION (154.46) [1] Outside Diameter
+CURRENT SECTION (154.46) [1] Outside Diamter
 
 -------------------------------------------------------------------
    COMPONENT NO 5                   FEATURE NO 10
@@ -527,7 +527,7 @@ WORK OFFSET S154
 SIZE D3.2500   ACTUAL 3.2496   DEV -.0004
 POSN X.0000   ACTUAL .0001   DEV .0001
 POSN Y.0000   ACTUAL .0013   DEV .0013
-CURRENT SECTION (154.48) [1] Outside Diameter
+CURRENT SECTION (154.48) [1] Outside Diamter
 
 -------------------------------------------------------------------
    COMPONENT NO 5                   FEATURE NO 18

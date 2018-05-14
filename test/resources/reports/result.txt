@@ -1,0 +1,35 @@
+Trying 10.0.11.71...
+Connected to 10.0.11.71.
+Escape character is '^]'.
+
+-------------------------------------------------------------------
+   COMPONENT NO 4                   FEATURE NO 1
+-------------------------------------------------------------------
+WORK OFFSET S154
+SIZE D3.2500   ACTUAL 3.2504   DEV .0004
+POSN X.0000   ACTUAL .0001   DEV .0001
+POSN Y.0000   ACTUAL .0014   DEV .0014
+CURRENT SECTION [1] Outside Diamter
+
+-------------------------------------------------------------------
+   COMPONENT NO 4                   FEATURE NO 2
+-------------------------------------------------------------------
+WORK OFFSET S154
+POSN Z.0000   ACTUAL .0014   DEV .0014
+CURRENT SECTION [5] Height
+
+-------------------------------------------------------------------
+   COMPONENT NO 4                   FEATURE NO 3
+-------------------------------------------------------------------
+WORK OFFSET S154
+SIZE D1.1500   ACTUAL 1.1512   DEV .0012
+POSN X.0000   ACTUAL .0125   DEV .0125
+POSN Y.0000   ACTUAL -.0020   DEV -.0020
+CURRENT SECTION [13] Large Bore
+
+-------------------------------------------------------------------
+   COMPONENT NO 4                   FEATURE NO 4
+-------------------------------------------------------------------
+WORK OFFSET S154
+POSN Z-.3500   ACTUAL -.3494   DEV .0006
+CURRENT SECTION [14] Large Bore Depth
