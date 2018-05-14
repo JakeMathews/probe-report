@@ -34,10 +34,10 @@ class MeasurementParser {
     SizeType sizeType;
     switch (match.group(1)) {
       case 'D':
-        sizeType = SizeType.DIAMETER;
+        sizeType = SizeType.DIMENSION;
         break;
       default:
-        sizeType = SizeType.DIAMETER;
+        sizeType = SizeType.DIMENSION;
         print("WARNING: SizeType [${match.group(1)}] is undefined. Defaulting to $sizeType");
         break;
     }

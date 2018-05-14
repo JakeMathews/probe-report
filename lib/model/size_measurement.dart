@@ -1,6 +1,6 @@
 import 'package:probe_report/model/measurement.dart';
 
-enum SizeType { DIAMETER }
+enum SizeType { DIMENSION }
 
 class SizeMeasurement extends Measurement {
   final SizeType sizeType;

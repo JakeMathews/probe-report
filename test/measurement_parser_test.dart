@@ -14,7 +14,7 @@ void main() {
 
     final SizeMeasurement sizeMeasurement = measurementParser.parse(sizeMeasurementText);
     expect(sizeMeasurement, isNotNull);
-    expect(sizeMeasurement.sizeType, SizeType.DIAMETER);
+    expect(sizeMeasurement.sizeType, SizeType.DIMENSION);
     expect(sizeMeasurement.expected, 3.25);
     expect(sizeMeasurement.actual, 3.2496);
     expect(sizeMeasurement.deviation, -0.0004);
