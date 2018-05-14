@@ -1,4 +1,4 @@
-import 'package:probe_report/probe_report.dart';
+import 'package:probe_report/model/probe_report.dart';
 
 class ProbeReportParser {
   ProbeReport parse(final String probeResults) {

@@ -1,4 +1,4 @@
-import 'package:probe_report/feature.dart';
+import 'package:probe_report/model/feature.dart';
 
 class Component {
   final int componentNumber;

@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:probe_report/exporters/exporter.dart';
-import 'package:probe_report/probe_report.dart';
+import 'package:probe_report/model/probe_report.dart';
 
 class CSVExporter extends Exporter {
   @override

@@ -1,4 +1,4 @@
-import 'package:probe_report/measurement.dart';
+import 'package:probe_report/model/measurement.dart';
 
 class Feature {
   final int featureNumber;
