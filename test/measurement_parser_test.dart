@@ -30,8 +30,8 @@ void main() {
     expect(yPosMeasurement, isNotNull);
     expect(yPosMeasurement.positionAxis, PositionAxis.Y);
     expect(yPosMeasurement.expected, 0.0);
-    expect(yPosMeasurement.actual, -0.0012);
-    expect(yPosMeasurement.deviation, -0.0012);
+    expect(yPosMeasurement.actual, 0.0012);
+    expect(yPosMeasurement.deviation, 0.0012);
 
     final PositionMeasurement zPosMeasurement = measurementParser.parse(positionMeasurementZText);
     expect(zPosMeasurement, isNotNull);

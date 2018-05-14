@@ -4,7 +4,8 @@ import 'package:probe_report/model/feature.dart';
 import 'package:probe_report/model/measurement.dart';
 
 class ComponentFeatureParser {
-  final RegExp componentRegExp = new RegExp(r'COMPONENT NO (\d*)\w*FEATURE NO (\d*)');
+  final RegExp componentRegExp = new RegExp(r'COMPONENT NO (\d*)\s*FEATURE NO (\d*)');
+  final RegExp workOffsetRegExp = new RegExp(r'WORK OFFSET (.*)');
 
   final MeasurementParser measurementParser;
 
@@ -25,8 +26,8 @@ class ComponentFeatureParser {
         var componentMatch = componentRegExp.firstMatch(line);
         componentNumber = int.parse(componentMatch.group(1));
         featureNumber = int.parse(componentMatch.group(2));
-      } else if (line.startsWith("WORK OFFSET")) {
-        workOffset = line.substring(line.indexOf("WORK OFFSET"), line.length - 1).trim();
+      } else if (workOffsetRegExp.hasMatch(line)) {
+        workOffset = workOffsetRegExp.firstMatch(line).group(1);
       } else {
         final Measurement measurement = measurementParser.parse(line);
         if (measurement != null) {
@@ -39,6 +40,7 @@ class ComponentFeatureParser {
 
     if (componentNumber != null && workOffset != null && measurements.isNotEmpty) {
       final Feature feature = new Feature(featureNumber, workOffset);
+      feature.measurements.addAll(measurements);
       return new Component(componentNumber, {featureNumber: feature});
     }
 

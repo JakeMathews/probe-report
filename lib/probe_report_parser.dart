@@ -21,22 +21,33 @@ class ProbeReportParser {
       if (lineBreakCount <= 0) {
         continue;
       } else if (lineBreakCount >= 3) {
-        final Component component = componentFeatureParser.parse(stringBuffer.toString());
-
-        if (component != null && probeReport.components.containsKey(component.componentNumber)) {
-          probeReport.components[component.componentNumber].features.addAll(component.features);
-        }
+        addComponentToProbeReport(stringBuffer, probeReport);
         stringBuffer.clear();
         lineBreakCount = 1;
-
-        if (component == null) {
-          print("ERROR: Cannot parse component. Component is null");
-        }
       }
 
       stringBuffer.writeln(line);
     }
 
+    // End of lines. Remaining buffer is parsed
+    addComponentToProbeReport(stringBuffer, probeReport);
+    stringBuffer.clear();
+
     return probeReport;
+  }
+
+  void addComponentToProbeReport(final StringBuffer stringBuffer, final ProbeReport probeReport) {
+    final Component component = componentFeatureParser.parse(stringBuffer.toString());
+
+    if (component == null) {
+      print("ERROR: Cannot parse component. Component is null");
+      return;
+    }
+
+    if (probeReport.components.containsKey(component.componentNumber)) {
+      probeReport.components[component.componentNumber].features.addAll(component.features);
+    } else {
+      probeReport.components[component.componentNumber] = component;
+    }
   }
 }
