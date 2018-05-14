@@ -2,7 +2,12 @@ import 'dart:io';
 
 import 'package:probe_report/component_feature_parser.dart';
 import 'package:probe_report/exporters/csv_exporter.dart';
+import 'package:probe_report/measurement_parser.dart';
 import 'package:probe_report/probe_report_parser.dart';
+
+final MeasurementParser measurementParser = new MeasurementParser();
+final ComponentFeatureParser componentFeatureParser = new ComponentFeatureParser(measurementParser);
+final ProbeReportParser probeReportParser = new ProbeReportParser(componentFeatureParser);
 
 main(final List<String> arguments) {
   if (arguments.length != 1) {
@@ -23,7 +28,7 @@ main(final List<String> arguments) {
 }
 
 parse(final String probeResults, final Directory destinationDirectory) {
-  var probeReport = ProbeReportParser(ComponentFeatureParser()).parse(probeResults);
+  var probeReport = probeReportParser.parse(probeResults);
 
   CSVExporter().export(probeReport, destinationDirectory);
 }

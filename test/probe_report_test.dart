@@ -1,10 +1,11 @@
 import 'package:probe_report/component_feature_parser.dart';
+import 'package:probe_report/measurement_parser.dart';
 import 'package:probe_report/model/probe_report.dart';
 import 'package:probe_report/probe_report_parser.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('probe', () {
+  test('ProbeReportParser.parse(text)', () {
     final String probeResults = '''
 Garbage text
 -------------------------------------------------------------------
@@ -32,7 +33,8 @@ POSN X.0000   ACTUAL -.0001   DEV -.0001
 POSN Y.0000   ACTUAL .0012   DEV .0012
     ''';
 
-    final ProbeReport actual = new ProbeReportParser(new ComponentFeatureParser()).parse(probeResults);
+    // TODO: Provide fake ComponentFeatureParser
+    final ProbeReport actual = new ProbeReportParser(new ComponentFeatureParser(new MeasurementParser())).parse(probeResults);
     expect(actual, isNotNull);
     expect(actual.components, isNotEmpty);
     expect(actual.components.length, 2);
