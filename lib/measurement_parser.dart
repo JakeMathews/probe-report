@@ -4,14 +4,14 @@ import 'package:probe_report/model/size_measurement.dart';
 
 class MeasurementParser {
   final RegExp sizeMeasurementRegExp = new RegExp(r'SIZE (\w)' // Group 1 - Size Type
-      r'([\d|\.|-]*)' // Group 2 - Expected Size
-      r'\s*ACTUAL ([\d|\.|-]*)' // Group 3 - Actual Size
-      r'\s*DEV ([\d|\.|-]*)'); // Group 4 - Deviation
+      r'([NaN|\d|\.|-]*)' // Group 2 - Expected Size
+      r'\s*ACTUAL ([NaN|\d|\.|-]*)' // Group 3 - Actual Size
+      r'\s*DEV ([NaN|\d|\.|-]*)'); // Group 4 - Deviation
 
   final RegExp positionMeasurementRegExp = new RegExp(r'POSN (\w)' // Group 1 - Position Axis
-      r'([\d|\.|-]*)' // Group 2 - Expected Position
-      r'\s*ACTUAL ([\d|\.|-]*)' // Group 3 - Actual Position
-      r'\s*DEV ([\d|\.|-]*)'); // Group 4 - Deviation
+      r'([NaN|\d|\.|-]*)' // Group 2 - Expected Position
+      r'\s*ACTUAL ([NaN|\d|\.|-]*)' // Group 3 - Actual Position
+      r'\s*DEV ([NaN|\d|\.|-]*)'); // Group 4 - Deviation
 
   Measurement parse(final String measurementText) {
     Measurement measurement;
