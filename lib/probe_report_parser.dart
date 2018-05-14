@@ -22,11 +22,16 @@ class ProbeReportParser {
         continue;
       } else if (lineBreakCount >= 3) {
         final Component component = componentFeatureParser.parse(stringBuffer.toString());
-        if (probeReport.components.containsKey(component.componentNumber)) {
+
+        if (component != null && probeReport.components.containsKey(component.componentNumber)) {
           probeReport.components[component.componentNumber].features.addAll(component.features);
         }
         stringBuffer.clear();
         lineBreakCount = 1;
+
+        if (component == null) {
+          print("ERROR: Cannot parse component. Component is null");
+        }
       }
 
       stringBuffer.writeln(line);
