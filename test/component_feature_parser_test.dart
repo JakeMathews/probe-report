@@ -16,9 +16,15 @@ POSN X.0000   ACTUAL -.0001   DEV -.0001
 POSN Y.0000   ACTUAL .0012   DEV .0012
 Not a measurement
     ''';
+    final String invalidComponentText = 'This is not a component';
+
     // TODO: Provide fake MeasurementParser
     final ComponentFeatureParser componentFeatureParser = new ComponentFeatureParser(new MeasurementParser());
     final Component actual = componentFeatureParser.parse(componentText);
+    final Component invalidComponent = componentFeatureParser.parse(invalidComponentText);
+
+    // TODO: Seperate invalid tests
+    expect(invalidComponent, isNull);
 
     expect(actual, isNotNull);
     expect(actual.componentNumber, 4);
