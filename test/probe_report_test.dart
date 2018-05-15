@@ -5,8 +5,11 @@ import 'package:probe_report/probe_report_parser.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('ProbeReportParser.parse(text)', () {
-    final String probeResults = '''
+  // TODO: Provide fake ComponentFeatureParser
+  final ProbeReportParser probeReportParser = new ProbeReportParser(new ComponentFeatureParser(new MeasurementParser()));
+
+  test('valid', () {
+    final String validProbeReportText = '''
 Garbage text
 -------------------------------------------------------------------
 COMPONENT NO 4                   FEATURE NO 1
@@ -32,15 +35,8 @@ SIZE D3.2500   ACTUAL 3.2496   DEV -.0004
 POSN X.0000   ACTUAL -.0001   DEV -.0001
 POSN Y.0000   ACTUAL .0012   DEV .0012
     ''';
-    final invalidProbeReportText = "This is not a valid probe report";
 
-    // TODO: Provide fake ComponentFeatureParser
-    final ProbeReportParser probeReportParser = new ProbeReportParser(new ComponentFeatureParser(new MeasurementParser()));
-    final ProbeReport actual = probeReportParser.parse(probeResults);
-    final ProbeReport invalidProbeReport = probeReportParser.parse(invalidProbeReportText);
-
-    // TODO: Separate invalid text tests
-    expect(invalidProbeReport, isNull);
+    final ProbeReport actual = probeReportParser.parse(validProbeReportText);
 
     expect(actual, isNotNull);
     expect(actual.components, isNotEmpty);
@@ -55,5 +51,11 @@ POSN Y.0000   ACTUAL .0012   DEV .0012
     expect(actual.components[5].componentNumber, 5);
     expect(actual.components[5].features, isNotEmpty);
     expect(actual.components[5].features.length, 1);
+  });
+
+  test('invalid', () {
+    final invalidProbeReportText = "This is not a valid probe report";
+    final ProbeReport invalidProbeReport = probeReportParser.parse(invalidProbeReportText);
+    expect(invalidProbeReport, isNull);
   });
 }

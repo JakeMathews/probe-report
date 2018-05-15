@@ -5,7 +5,10 @@ import 'package:probe_report/model/feature.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('ComponentFeatureParser().parse(text)', () {
+  // TODO: Provide fake MeasurementParser
+  final ComponentFeatureParser componentFeatureParser = new ComponentFeatureParser(new MeasurementParser());
+
+  test('valid', () {
     final String componentText = '''
 -------------------------------------------------------------------
 COMPONENT NO 4                   FEATURE NO 1
@@ -16,15 +19,7 @@ POSN X.0000   ACTUAL -.0001   DEV -.0001
 POSN Y.0000   ACTUAL .0012   DEV .0012
 Not a measurement
     ''';
-    final String invalidComponentText = 'This is not a component';
-
-    // TODO: Provide fake MeasurementParser
-    final ComponentFeatureParser componentFeatureParser = new ComponentFeatureParser(new MeasurementParser());
     final Component actual = componentFeatureParser.parse(componentText);
-    final Component invalidComponent = componentFeatureParser.parse(invalidComponentText);
-
-    // TODO: Seperate invalid tests
-    expect(invalidComponent, isNull);
 
     expect(actual, isNotNull);
     expect(actual.componentNumber, 4);
@@ -38,5 +33,11 @@ Not a measurement
     expect(actualFeature.measurements, isNotNull);
     expect(actualFeature.measurements, isNotEmpty);
     expect(actualFeature.measurements.length, 3);
+  });
+
+  test('invalid', () {
+    final String invalidComponentText = 'This is not a component';
+    final Component invalidComponent = componentFeatureParser.parse(invalidComponentText);
+    expect(invalidComponent, isNull);
   });
 }

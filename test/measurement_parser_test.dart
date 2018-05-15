@@ -17,7 +17,7 @@ void main() {
   final String invalidPositionTypeText = 'POSN Q1.25   ACTUAL 1.2567   DEV .0067';
   final String notMeasurementText = 'I am not a measurement';
 
-  test('sizeMeasurementText', () {
+  test('size normal', () {
     final SizeMeasurement sizeMeasurement = measurementParser.parse(sizeMeasurementText);
     expect(sizeMeasurement, isNotNull);
     expect(sizeMeasurement.sizeType, SizeType.DIMENSION);
@@ -26,7 +26,7 @@ void main() {
     expect(sizeMeasurement.deviation, -0.0004);
   });
 
-  test('sizeMeasurementNanText', () {
+  test('size NaN', () {
     final SizeMeasurement nanSizeMeasurement = measurementParser.parse(sizeMeasurementNanText);
     expect(nanSizeMeasurement, isNotNull);
     expect(nanSizeMeasurement.sizeType, SizeType.DIMENSION);
@@ -35,7 +35,7 @@ void main() {
     expect(nanSizeMeasurement.deviation.isNaN, true);
   });
 
-  test('invalidSizeTypeText', () {
+  test('size invalid', () {
     final SizeMeasurement invalidSizeType = measurementParser.parse(invalidSizeTypeText);
     expect(invalidSizeType, isNotNull);
     expect(invalidSizeType.sizeType, SizeType.DIMENSION);
@@ -44,7 +44,7 @@ void main() {
     expect(invalidSizeType.deviation, .0067);
   });
 
-  test('positionMeasurementXText', () {
+  test('position X', () {
     final PositionMeasurement xPosMeasurement = measurementParser.parse(positionMeasurementXText);
     expect(xPosMeasurement, isNotNull);
     expect(xPosMeasurement.positionAxis, PositionAxis.X);
@@ -53,7 +53,7 @@ void main() {
     expect(xPosMeasurement.deviation, -0.0001);
   });
 
-  test('positionMeasurementYText', () {
+  test('position Y', () {
     final PositionMeasurement yPosMeasurement = measurementParser.parse(positionMeasurementYText);
     expect(yPosMeasurement, isNotNull);
     expect(yPosMeasurement.positionAxis, PositionAxis.Y);
@@ -62,7 +62,7 @@ void main() {
     expect(yPosMeasurement.deviation, 0.0012);
   });
 
-  test('positionMeasurementZText', () {
+  test('position Z', () {
     final PositionMeasurement zPosMeasurement = measurementParser.parse(positionMeasurementZText);
     expect(zPosMeasurement, isNotNull);
     expect(zPosMeasurement.positionAxis, PositionAxis.Z);
@@ -71,7 +71,7 @@ void main() {
     expect(zPosMeasurement.deviation, .0067);
   });
 
-  test('positionMeasurementNanText', () {
+  test('posisition NaN', () {
     final PositionMeasurement nanPosMeasurement = measurementParser.parse(positionMeasurementNanText);
     expect(nanPosMeasurement, isNotNull);
     expect(nanPosMeasurement.positionAxis, PositionAxis.Y);
@@ -80,7 +80,7 @@ void main() {
     expect(nanPosMeasurement.deviation.isNaN, true);
   });
 
-  test('invalidPositionTypeText', () {
+  test('position invalid', () {
     final PositionMeasurement invalidPositionType = measurementParser.parse(invalidPositionTypeText);
     expect(invalidPositionType, isNotNull);
     expect(invalidPositionType.positionAxis, PositionAxis.X);
@@ -89,7 +89,7 @@ void main() {
     expect(invalidPositionType.deviation, .0067);
   });
 
-  test('notMeasurementText', () {
+  test('invalid', () {
     final Measurement notMeasurement = measurementParser.parse(notMeasurementText);
     expect(notMeasurement, isNull);
   });
