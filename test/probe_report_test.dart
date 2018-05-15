@@ -32,9 +32,16 @@ SIZE D3.2500   ACTUAL 3.2496   DEV -.0004
 POSN X.0000   ACTUAL -.0001   DEV -.0001
 POSN Y.0000   ACTUAL .0012   DEV .0012
     ''';
+    final invalidProbeReportText = "This is not a valid probe report";
 
     // TODO: Provide fake ComponentFeatureParser
-    final ProbeReport actual = new ProbeReportParser(new ComponentFeatureParser(new MeasurementParser())).parse(probeResults);
+    final ProbeReportParser probeReportParser = new ProbeReportParser(new ComponentFeatureParser(new MeasurementParser()));
+    final ProbeReport actual = probeReportParser.parse(probeResults);
+    final ProbeReport invalidProbeReport = probeReportParser.parse(invalidProbeReportText);
+
+    // TODO: Separate invalid text tests
+    expect(invalidProbeReport, isNull);
+
     expect(actual, isNotNull);
     expect(actual.components, isNotEmpty);
     expect(actual.components.length, 2);

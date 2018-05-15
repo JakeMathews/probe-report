@@ -33,6 +33,10 @@ class ProbeReportParser {
     addComponentToProbeReport(stringBuffer, probeReport);
     stringBuffer.clear();
 
+    if (probeReport.components.isEmpty) {
+      return null;
+    }
+
     return probeReport;
   }
 
