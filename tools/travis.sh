@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Install all dart packages
+pub get
+
+echo "Running tests..."
+pub run test --reporter expanded
+
+# Generate and upload coverage to Coveralls if the token exists
+if [ "$COVERALLS_TOKEN" ] ; then
+  OBS_PORT=9292
+  echo "Collecting coverage on port $OBS_PORT..."
+
+  # Start tests in one VM.
+  dart \
+    --enable-vm-service=$OBS_PORT \
+    --pause-isolates-on-exit \
+    test/test_all.dart &
+
+  # Run the coverage collector to generate the JSON coverage report.
+  dart bin/collect_coverage.dart \
+    --port=$OBS_PORT \
+    --out=var/coverage.json \
+    --wait-paused \
+    --resume-isolates
+
+  echo "Generating LCOV report..."
+  dart bin/format_coverage.dart \
+    --lcov \
+    --in=var/coverage.json \
+    --out=var/lcov.info \
+    --packages=.packages \
+    --report-on=lib
+fi
+
