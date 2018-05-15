@@ -22,9 +22,9 @@ POSN Y.0000   ACTUAL .0012   DEV .0012
     expect(actual, isNotNull);
     expect(actual.componentNumber, 4);
     expect(actual.features, isNotEmpty);
-    expect(actual.features, contains(1));
+    expect(actual.features.length, 1);
 
-    final Feature actualFeature = actual.features[1];
+    final Feature actualFeature = actual.features[0];
     expect(actualFeature, isNotNull);
     expect(actualFeature.featureNumber, 1);
     expect(actualFeature.workOffset, "S154");

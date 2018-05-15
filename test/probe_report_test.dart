@@ -43,13 +43,10 @@ POSN Y.0000   ACTUAL .0012   DEV .0012
     expect(actual.components[4].componentNumber, 4);
     expect(actual.components[4].features, isNotEmpty);
     expect(actual.components[4].features.length, 2);
-    expect(actual.components[4].features, contains(1));
-    expect(actual.components[4].features, contains(2));
 
     expect(actual.components, contains(5));
     expect(actual.components[5].componentNumber, 5);
     expect(actual.components[5].features, isNotEmpty);
     expect(actual.components[5].features.length, 1);
-    expect(actual.components[5].features, contains(1));
   });
 }

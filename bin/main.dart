@@ -15,7 +15,7 @@ main(final List<String> arguments) {
     return;
   }
 
-  var file = File(arguments[0]);
+  var file = new File(arguments[0]);
   file.exists().then((bool fileExists) {
     if (fileExists) {
       file.readAsString().then((String probeResults) {
@@ -30,5 +30,5 @@ main(final List<String> arguments) {
 parse(final String probeResults, final Directory destinationDirectory) {
   var probeReport = probeReportParser.parse(probeResults);
 
-  CSVExporter().export(probeReport, destinationDirectory);
+  new CSVExporter().export(probeReport, destinationDirectory);
 }

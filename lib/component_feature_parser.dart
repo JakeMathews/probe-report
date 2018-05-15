@@ -33,7 +33,7 @@ class ComponentFeatureParser {
         if (measurement != null) {
           measurements.add(measurement);
         } else {
-          print("ERROR: Failed to parse measurement. Measurement is null");
+          print("ERROR: Failed to parse measurement: $line");
         }
       }
     }
@@ -41,7 +41,7 @@ class ComponentFeatureParser {
     if (componentNumber != null && workOffset != null && measurements.isNotEmpty) {
       final Feature feature = new Feature(featureNumber, workOffset);
       feature.measurements.addAll(measurements);
-      return new Component(componentNumber, {featureNumber: feature});
+      return new Component(componentNumber, [feature]);
     }
 
     return null;
