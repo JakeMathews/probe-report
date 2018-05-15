@@ -2,6 +2,7 @@
 
 # Install all dart packages
 pub get
+pub global activate coverage
 
 echo "Running tests..."
 pub run test --reporter expanded
@@ -18,14 +19,14 @@ if [ "$COVERALLS_TOKEN" ] ; then
     test/test_all.dart &
 
   # Run the coverage collector to generate the JSON coverage report.
-  dart bin/collect_coverage.dart \
+  pub global run coverage:collect_coverage \
     --port=$OBS_PORT \
     --out=var/coverage.json \
     --wait-paused \
     --resume-isolates
 
   echo "Generating LCOV report..."
-  dart bin/format_coverage.dart \
+  pub global run coverage:format_coverage \
     --lcov \
     --in=var/coverage.json \
     --out=var/lcov.info \
