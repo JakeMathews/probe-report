@@ -14,6 +14,7 @@ WORK OFFSET S154
 SIZE D3.2500   ACTUAL 3.2496   DEV -.0004
 POSN X.0000   ACTUAL -.0001   DEV -.0001
 POSN Y.0000   ACTUAL .0012   DEV .0012
+Not a measurement
     ''';
     // TODO: Provide fake MeasurementParser
     final ComponentFeatureParser componentFeatureParser = new ComponentFeatureParser(new MeasurementParser());

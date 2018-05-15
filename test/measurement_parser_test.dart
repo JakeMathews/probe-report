@@ -1,4 +1,5 @@
 import 'package:probe_report/measurement_parser.dart';
+import 'package:probe_report/model/measurement.dart';
 import 'package:probe_report/model/position_measurement.dart';
 import 'package:probe_report/model/size_measurement.dart';
 import 'package:test/test.dart';
@@ -12,6 +13,9 @@ void main() {
   final String positionMeasurementYText = 'POSN Y.0000   ACTUAL .0012   DEV .0012';
   final String positionMeasurementZText = 'POSN Z1.25   ACTUAL 1.2567   DEV .0067';
   final String positionMeasurementNanText = 'POSN Y.0000   ACTUAL NaN   DEV NaN';
+  final String invalidSizeTypeText = 'SIZE Q1.25   ACTUAL 1.2567   DEV .0067';
+  final String invalidPositionTypeText = 'POSN Q1.25   ACTUAL 1.2567   DEV .0067';
+  final String notMeasurementText = 'I am not a measurement';
 
   test('sizeMeasurementText', () {
     final SizeMeasurement sizeMeasurement = measurementParser.parse(sizeMeasurementText);
@@ -29,6 +33,15 @@ void main() {
     expect(nanSizeMeasurement.expected, 3.25);
     expect(nanSizeMeasurement.actual.isNaN, true);
     expect(nanSizeMeasurement.deviation.isNaN, true);
+  });
+
+  test('invalidSizeTypeText', () {
+    final SizeMeasurement invalidSizeType = measurementParser.parse(invalidSizeTypeText);
+    expect(invalidSizeType, isNotNull);
+    expect(invalidSizeType.sizeType, SizeType.DIMENSION);
+    expect(invalidSizeType.expected, 1.25);
+    expect(invalidSizeType.actual, 1.2567);
+    expect(invalidSizeType.deviation, .0067);
   });
 
   test('positionMeasurementXText', () {
@@ -65,5 +78,19 @@ void main() {
     expect(nanPosMeasurement.expected, 0.0);
     expect(nanPosMeasurement.actual.isNaN, true);
     expect(nanPosMeasurement.deviation.isNaN, true);
+  });
+
+  test('invalidPositionTypeText', () {
+    final PositionMeasurement invalidPositionType = measurementParser.parse(invalidPositionTypeText);
+    expect(invalidPositionType, isNotNull);
+    expect(invalidPositionType.positionAxis, PositionAxis.X);
+    expect(invalidPositionType.expected, 1.25);
+    expect(invalidPositionType.actual, 1.2567);
+    expect(invalidPositionType.deviation, .0067);
+  });
+
+  test('notMeasurementText', () {
+    final Measurement notMeasurement = measurementParser.parse(notMeasurementText);
+    expect(notMeasurement, isNull);
   });
 }
