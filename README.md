@@ -1,6 +1,7 @@
 # Probe Report
 
 [![Build Status](https://travis-ci.org/GrayDragonSoftware/probe-report.svg?branch=master)](https://travis-ci.org/GrayDragonSoftware/probe-report)
+[![Coverage Status](https://coveralls.io/repos/github/GrayDragonSoftware/probe-report/badge.svg?branch=master)](https://coveralls.io/github/GrayDragonSoftware/probe-report?branch=master)
 
 This project is a command-line Dart application for use with Haas machines equipped with the Renishaw spindle probe.
 
